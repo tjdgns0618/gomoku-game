@@ -1,0 +1,105 @@
+.cell {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell::before,
+.cell::after {
+  content: '';
+  position: absolute;
+  background: #5c4a32;
+  pointer-events: none;
+}
+
+.cell::before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.cell::after {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.edgeLeft::before {
+  left: 50%;
+}
+
+.edgeRight::before {
+  right: 50%;
+}
+
+.edgeTop::after {
+  top: 50%;
+}
+
+.edgeBottom::after {
+  bottom: 50%;
+}
+
+.hoshi::before {
+  z-index: 0;
+}
+
+.hoshi > .hoshiDot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5c4a32;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.stone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 92%;
+  height: 92%;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
+  animation: stonePlace 180ms ease-out;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.stoneBlack {
+  background: radial-gradient(circle at 35% 30%, #5a5a5a, #050505 70%);
+}
+
+.stoneWhite {
+  background: radial-gradient(circle at 35% 30%, #ffffff, #c8c8c8 80%);
+  border: 1px solid #999;
+}
+
+@keyframes stonePlace {
+  from {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
