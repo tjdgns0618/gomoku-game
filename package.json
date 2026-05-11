@@ -8,12 +8,17 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "render-build": "npm install && npm run build && cd server && npm install",
+    "render-build": "npm install && npm run build",
     "start": "node server/index.js"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
+    "express": "^4.21.2",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
+    "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
