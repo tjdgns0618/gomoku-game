@@ -1,0 +1,255 @@
+.lobby {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  gap: 1.2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0.4rem 0 0;
+  color: #777;
+  font-size: 0.95rem;
+}
+
+.section {
+  width: 100%;
+  max-width: 360px;
+  background: #ffffff;
+  border: 1px solid #e3dfd6;
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.sectionTitle {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.btnPrimary {
+  background: #2563eb;
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: #1d4ed8;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: #555;
+  border: 1px solid #ccc;
+}
+
+.btnSecondary:hover {
+  background: #f5f5f5;
+}
+
+.btnFullWidth {
+  display: block;
+  width: 100%;
+}
+
+.roomInfo {
+  text-align: center;
+}
+
+.roomLabel {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.codeRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.code {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: #f6f3ec;
+  border: 1px solid #d8d4c8;
+  border-radius: 6px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.copyBtn {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.copyBtn:hover {
+  background: #e3e3e3;
+}
+
+.waiting {
+  margin: 0 0 1rem;
+  color: #2563eb;
+  font-size: 0.9rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  color: #999;
+  font-size: 0.8rem;
+  gap: 0.6rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #d8d4c8;
+}
+
+.joinRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 0.9rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: ui-monospace, Consolas, monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.input:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+  border-color: #2563eb;
+}
+
+.nicknameInput {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.nicknameInput:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+  border-color: #2563eb;
+}
+
+.nicknameInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  margin: 0.6rem 0 0;
+  color: #dc2626;
+  font-size: 0.85rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+    color: #f0f0f0;
+  }
+  .sectionTitle, .roomLabel, .subtitle {
+    color: #aaa;
+  }
+  .code, .input, .nicknameInput {
+    background: #1f1f1f;
+    border-color: #444;
+    color: #f0f0f0;
+  }
+  .copyBtn {
+    background: #333;
+    border-color: #555;
+    color: #f0f0f0;
+  }
+  .copyBtn:hover {
+    background: #444;
+  }
+  .btnSecondary {
+    color: #aaa;
+    border-color: #555;
+  }
+  .btnSecondary:hover {
+    background: #333;
+  }
+  .divider {
+    color: #888;
+  }
+  .divider::before,
+  .divider::after {
+    background: #444;
+  }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 1.9rem; }
+  .section { padding: 1.1rem 1.2rem; }
+  .code { font-size: 1.2rem; padding: 0.5rem 0.8rem; }
+}
